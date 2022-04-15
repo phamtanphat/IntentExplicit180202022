@@ -30,14 +30,14 @@ public class MainActivity2 extends AppCompatActivity {
 //            Log.d("BBB",animal.size() + "");
 //        }
         // 3 Nhận kiểu bundle
-        Intent intent = getIntent();
-
-        if (intent != null){
-            Bundle bundle = intent.getBundleExtra("bundle");
-            String text = bundle.getString("text");
-            int number = bundle.getInt("number");
-            Log.d("BBB",text);
-            Log.d("BBB",number + "");
-        }
+//        Intent intent = getIntent();
+//
+//        if (intent != null){
+//            Bundle bundle = intent.getBundleExtra("bundle");
+//            String text = bundle.getString("text");
+//            int number = bundle.getInt("number");
+//            Log.d("BBB",text);
+//            Log.d("BBB",number + "");
+//        }
     }
 }

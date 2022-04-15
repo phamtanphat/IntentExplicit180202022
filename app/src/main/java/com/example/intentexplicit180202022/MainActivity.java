@@ -2,9 +2,15 @@ package com.example.intentexplicit180202022;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 
+import androidx.activity.result.ActivityResult;
+import androidx.activity.result.ActivityResultCallback;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.intentexplicit180202022.databinding.ActivityMainBinding;
 
@@ -50,8 +56,18 @@ public class MainActivity extends AppCompatActivity {
                 bundle.putString("text","Value");
                 bundle.putInt("number",1);
                 intent.putExtra("bundle",bundle);
-                startActivity(intent);
+                resultLauncher.launch(intent);
             }
         });
     }
+
+    public ActivityResultLauncher<Intent> resultLauncher = registerForActivityResult(
+            new ActivityResultContracts.StartActivityForResult(),
+            new ActivityResultCallback<ActivityResult>() {
+                @Override
+                public void onActivityResult(ActivityResult result) {
+
+                }
+            }
+    );
 }
