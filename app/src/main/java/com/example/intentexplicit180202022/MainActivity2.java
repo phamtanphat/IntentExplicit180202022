@@ -24,7 +24,7 @@ public class MainActivity2 extends AppCompatActivity {
         Intent intent = getIntent();
 
         if (intent != null){
-            Animal animal = (Animal) intent.getSerializableExtra("object");
+            Animal animal = intent.getParcelableExtra("object");
             Log.d("BBB",animal.toString());
         }
     }
