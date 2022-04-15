@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 
+import java.util.ArrayList;
+
 public class MainActivity2 extends AppCompatActivity {
 
     @Override
@@ -21,11 +23,21 @@ public class MainActivity2 extends AppCompatActivity {
 //            Log.d("BBB",text);
 //        }
         // 2 : Nhận kiểu object
+//        Intent intent = getIntent();
+//
+//        if (intent != null){
+//            ArrayList<Animal> animal = intent.getParcelableArrayListExtra("object");
+//            Log.d("BBB",animal.size() + "");
+//        }
+        // 3 Nhận kiểu bundle
         Intent intent = getIntent();
 
         if (intent != null){
-            Animal animal = intent.getParcelableExtra("object");
-            Log.d("BBB",animal.toString());
+            Bundle bundle = intent.getBundleExtra("bundle");
+            String text = bundle.getString("text");
+            int number = bundle.getInt("number");
+            Log.d("BBB",text);
+            Log.d("BBB",number + "");
         }
     }
 }
