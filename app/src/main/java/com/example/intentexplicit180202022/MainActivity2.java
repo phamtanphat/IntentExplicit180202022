@@ -40,4 +40,13 @@ public class MainActivity2 extends AppCompatActivity {
 //            Log.d("BBB",number + "");
 //        }
     }
+
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent();
+        intent.putExtra("value","Dữ liệu trả về");
+        setResult(RESULT_OK,intent);
+        finish();
+        super.onBackPressed();
+    }
 }

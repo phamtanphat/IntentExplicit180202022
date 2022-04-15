@@ -66,7 +66,10 @@ public class MainActivity extends AppCompatActivity {
             new ActivityResultCallback<ActivityResult>() {
                 @Override
                 public void onActivityResult(ActivityResult result) {
-
+                    if (result.getResultCode() == RESULT_OK){
+                        String text = result.getData().getStringExtra("value");
+                        Log.d("BBB",text);
+                    }
                 }
             }
     );
