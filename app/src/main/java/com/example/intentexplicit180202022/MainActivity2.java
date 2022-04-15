@@ -14,11 +14,18 @@ public class MainActivity2 extends AppCompatActivity {
         setContentView(R.layout.activity_main2);
 
         // 1 : Nhận kiểu string
+//        Intent intent = getIntent();
+//
+//        if (intent != null){
+//            String text = intent.getStringExtra("text");
+//            Log.d("BBB",text);
+//        }
+        // 2 : Nhận kiểu object
         Intent intent = getIntent();
 
         if (intent != null){
-            String text = intent.getStringExtra("text");
-            Log.d("BBB",text);
+            Animal animal = (Animal) intent.getSerializableExtra("object");
+            Log.d("BBB",animal.toString());
         }
     }
 }
